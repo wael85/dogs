@@ -1,5 +1,8 @@
 <template>
-  <v-img :src="imgUrl"></v-img>
+<v-container>
+  <v-img width="350" height="300" :src="imgUrl"></v-img>
+</v-container>
+  
 
 </template>
 
@@ -26,4 +29,6 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style scoped>
+
+</style>
