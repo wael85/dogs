@@ -2,11 +2,15 @@
   <v-container>
     <v-row>
       <v-col v-for="n in items" :key="n" cols="4">
-        <v-card height="400" v-if="n === 'All Breeds'">
+        <v-card height="400" v-if="n === 'All Breeds'" to="/allbreed">
           <v-card-title>{{ n }}</v-card-title>
           <get-random-pic></get-random-pic>
         </v-card>
-        <v-card height="400" v-if="n != 'All Breeds'" :to="breedUrl('g')">
+        <v-card
+          height="400"
+          v-if="n != 'All Breeds'"
+          :to="`/breed?breed=${n.toLowerCase()}`"
+        >
           <v-card-title>{{ n }}</v-card-title>
           <get-dog-by-breed :breed="n.toLowerCase()"></get-dog-by-breed>
         </v-card>
@@ -27,14 +31,77 @@ export default Vue.extend({
     GetDogByBreed,
   },
   data: () => ({
-    items: ["All Breeds", "African"],
+    items: [
+      "All Breeds",
+      "African",
+      "Airedale",
+      "Akita",
+      "Appenzeller",
+      "Basenji",
+      "Beagle",
+      "Boxer",
+      "Brabancon",
+      "Briard",
+      "Buhund",
+      "Bulldog",
+      "Bullterrier",
+      "cairn",
+      "cattledog",
+      "chihuahua",
+      "chow",
+      "clumber",
+      "cockapoo",
+      "collie",
+      "coonhound",
+      "corgi",
+      "cotondetulear",
+      "dachshund",
+      "dalmatian",
+      "dane",
+      "dhole",
+      "dingo",
+      "doberman",
+      "entlebucher",
+      "eskimo",
+      "frise",
+      "germanshepherd",
+      "groenendael",
+      "havanese",
+      "hound",
+      "blood",
+      "husky",
+      "keeshond",
+      "kelpie",
+      "komondor",
+      "kuvasz",
+      "labradoodle",
+      "labrador",
+      "leonberg",
+      "lhasa",
+      "malamute",
+      "malinois",
+      "maltese",
+      "mastiff",
+      "mexicanhairless",
+      "mix",
+      "pekinese",
+      "pembroke",
+      "pitbull",
+      "pointer",
+      "pomeranian",
+      "pug",
+      "puggle",
+      "pyrenees",
+      "redbone",
+      "rottweiler",
+      "saluki",
+      "samoyed",
+      "schipperke",
+      "schnauzer",
+      "shiba",
+      "shihtzu",
+      "stbernard",
+    ],
   }),
-  computed: {
-    breedUrl: () =>{
-      
-      return '/onebreed?breed=';
-      
-    },
-  }
 });
 </script>
