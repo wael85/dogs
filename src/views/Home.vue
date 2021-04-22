@@ -12,7 +12,7 @@
           :to="`/breed?breed=${n.toLowerCase()}`"
         >
           <v-card-title>{{ n }}</v-card-title>
-          <get-dog-by-breed :breed="n"></get-dog-by-breed>
+          <get-dog-by-breed :breed="n.toLowerCase()"></get-dog-by-breed>
         </v-card>
       </v-col>
     </v-row>

@@ -17,7 +17,7 @@ export default Vue.extend({
     imgUrl: '',
   }),
   created() {
-    axios.get("https://dog.ceo/api/breeds/image/random").then((res) => {
+    axios.get(`https://dog.ceo/api/breed/${this.breed}/images/random`).then((res) => {
       this.imgUrl = res.data.message;
     });
   },
