@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col v-for="n in items" :key="n" cols="4">
+      <v-col  v-for="n in items" :key="n" :cols="colsWidth">
         <v-card height="400" v-if="n === 'All Breeds'" to="/breed?breed=allbreed">
           <v-card-title>{{ n }}</v-card-title>
           <get-random-pic></get-random-pic>
@@ -31,6 +31,7 @@ export default Vue.extend({
     GetDogByBreed,
   },
   data: () => ({
+    colsWidth: 4,
     items: [
       "All Breeds",
       "African",
@@ -103,5 +104,15 @@ export default Vue.extend({
       "stbernard",
     ],
   }),
+  mounted(){
+    if(window.screen.width <=600 ){
+      this.colsWidth = 12;
+    }
+  },
+  updated(){
+    if(window.screen.width <=600 ){
+      this.colsWidth = 12;
+    }
+  },
 });
 </script>
