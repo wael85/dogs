@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col v-for="n in items" :key="n" cols="4">
-        <v-card height="400" v-if="n === 'All Breeds'" to="/allbreed">
+        <v-card height="400" v-if="n === 'All Breeds'" to="/breed?breed=allbreed">
           <v-card-title>{{ n }}</v-card-title>
           <get-random-pic></get-random-pic>
         </v-card>
@@ -12,7 +12,7 @@
           :to="`/breed?breed=${n.toLowerCase()}`"
         >
           <v-card-title>{{ n }}</v-card-title>
-          <get-dog-by-breed :breed="n.toLowerCase()"></get-dog-by-breed>
+          <get-dog-by-breed :breed="n"></get-dog-by-breed>
         </v-card>
       </v-col>
     </v-row>

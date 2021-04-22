@@ -13,7 +13,7 @@ import axios from "axios";
 export default Vue.extend({
   name: "GetRandomPic",
   data: () => ({
-    imgUrl: String,
+    imgUrl: '',
   }),
   computed: {
     getRandomDogs: async () => {
@@ -24,7 +24,7 @@ export default Vue.extend({
     },
   },
   created() {
-    axios.get("https://dog.ceo/api/breeds/image/random").then( res => {this.imgUrl = res.data.message; console.log(res)});
+    axios.get("https://dog.ceo/api/breeds/image/random").then( res => this.imgUrl = res.data.message);
   },
 });
 </script>
